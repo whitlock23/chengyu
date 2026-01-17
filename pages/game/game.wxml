@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="game-info">
+    <view class="subtitle">当前玩家：{{currentPlayer.nickName || '玩家' + (currentPlayerIndex + 1)}}</view>
+    <view class="time-display">倒计时：{{remainingTime}}s</view>
+  </view>
+  
+  <view class="current-idiom" wx:if="{{currentIdiom}}">{{currentIdiom}}</view>
+  <view class="current-idiom" wx:else>游戏即将开始...</view>
+  
+  <view class="input-container">
+    <input 
+      class="input" 
+      placeholder="请输入成语" 
+      value="{{inputIdiom}}" 
+      type="text"
+      disabled="{{!isCurrentPlayer}}"
+    />
+    <view class="button" bindtap="submitIdiom" disabled="{{!isCurrentPlayer}}">
+      提交
+    </view>
+  </view>
+  
+  <view class="score-display">
+    <view wx:for="{{users}}" wx:key="index">
+      {{item.nickName || '玩家' + (index + 1)}}：{{scores[index]}}分
+    </view>
+  </view>
+  
+  <view class="history-section">
+    <view class="subtitle">成语历史</view>
+    <view class="history-list">
+      <view class="history-item" wx:for="{{usedIdioms}}" wx:key="index">
+        {{index + 1}}. {{item}}
+      </view>
+    </view>
+  </view>
+  
+  <view class="game-over" wx:if="{{gameOver}}">
+    <view class="game-over-title">游戏结束</view>
+    <view class="game-over-subtitle">最终得分</view>
+    <view class="game-over-score">
+      <view wx:for="{{users}}" wx:key="index">
+        {{item.nickName || '玩家' + (index + 1)}}：{{scores[index]}}分
+      </view>
+    </view>
+    <view class="game-over-button" bindtap="backToRoom">返回房间</view>
+  </view>
+</view>

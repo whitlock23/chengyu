@@ -1,0 +1,148 @@
+/* 房间页面样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* 增强标题效果 */
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 25px 0 15px;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.subtitle {
+  animation: slideInRight 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 用户列表增强 */
+.user-list {
+  margin: 25px 0;
+  width: 100%;
+  max-width: 320px;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* 用户项动画 */
+.user-item {
+  animation: fadeIn 0.6s ease-out both;
+}
+
+.user-item:nth-child(1) { animation-delay: 0.5s; }
+.user-item:nth-child(2) { animation-delay: 0.6s; }
+.user-item:nth-child(3) { animation-delay: 0.7s; }
+.user-item:nth-child(4) { animation-delay: 0.8s; }
+.user-item:nth-child(5) { animation-delay: 0.9s; }
+.user-item:nth-child(6) { animation-delay: 1.0s; }
+.user-item:nth-child(7) { animation-delay: 1.1s; }
+.user-item:nth-child(8) { animation-delay: 1.2s; }
+.user-item:nth-child(9) { animation-delay: 1.3s; }
+.user-item:nth-child(10) { animation-delay: 1.4s; }
+
+/* 状态样式增强 */
+.status {
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* 操作按钮增强 */
+.action-buttons {
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1s ease-out 0.8s both;
+}
+
+/* 按钮基础样式 */
+.button {
+  margin: 10px 0;
+  padding: 15px 30px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  width: 200px;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+/* 按钮悬停效果 */
+.button:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+/* 按钮禁用样式 */
+.button[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+/* 提示信息增强 */
+.tips {
+  margin: 25px 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  text-align: center;
+  animation: fadeIn 1s ease-out 1s both;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 通用动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

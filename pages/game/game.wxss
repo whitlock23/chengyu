@@ -1,0 +1,362 @@
+/* 游戏页面样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* 游戏信息增强 */
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 320px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+/* 时间显示增强 */
+.time-display {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin: 15px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* 当前成语增强 */
+.current-idiom {
+  font-size: 56px;
+  font-weight: 800;
+  margin: 25px 0;
+  padding: 25px 45px;
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  color: white;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  letter-spacing: 6px;
+  animation: bounceIn 1s ease-out;
+  min-width: 300px;
+}
+
+/* 输入容器增强 */
+.input-container {
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* 输入框增强 */
+.input {
+  padding: 16px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  margin: 12px 0;
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 4px;
+  height: 60px;
+  line-height: 28px;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #4facfe;
+  box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.15);
+  background-color: white;
+  transform: translateY(-2px);
+}
+
+/* 输入框禁用状态样式 */
+.input[disabled] {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #9ca3af;
+  cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+/* 按钮禁用状态样式 */
+.button[disabled] {
+  background: linear-gradient(135deg, #d1d5db 0%, #9ca3af 100%);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 按钮增强 */
+.button {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 12px 0;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  max-width: 240px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.button:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+  opacity: 0.95;
+}
+
+.button.disabled {
+  background: linear-gradient(135deg, #d1d5db 0%, #9ca3af 100%);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 分数显示增强 */
+.score-display {
+  margin: 25px 0;
+  width: 100%;
+  max-width: 320px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease-out 0.6s both;
+}
+
+.score-display view {
+  margin: 8px 0;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  color: #4b5563;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.score-display view:last-child {
+  border-bottom: none;
+}
+
+/* 历史记录增强 */
+.history-section {
+  margin: 25px 0;
+  width: 100%;
+  max-width: 320px;
+  animation: fadeIn 0.8s ease-out 0.8s both;
+}
+
+.history-list {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.history-item {
+  padding: 12px 16px;
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4b5563;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #4facfe;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.history-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  background-color: white;
+}
+
+/* 游戏结束弹窗样式修复 */
+.game-over {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  z-index: 9999; /* 提高层级确保在最上层 */
+  animation: fadeIn 0.5s ease-out;
+  box-sizing: border-box;
+  min-width: 300px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+/* 弹窗标题 */
+.game-over-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 15px 0;
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: bounceIn 1s ease-out;
+  text-align: center;
+}
+
+/* 弹窗副标题 */
+.game-over-subtitle {
+  font-size: 22px;
+  margin: 10px 0;
+  color: #666;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  text-align: center;
+}
+
+/* 弹窗分数显示 */
+.game-over-score {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  margin: 20px 0;
+  animation: fadeIn 0.8s ease-out 0.4s both;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  min-width: 250px;
+  border: 1px solid #eee;
+}
+
+/* 弹窗分数项 */
+.game-over-score view {
+  margin: 6px 0;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  color: #4b5563;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.game-over-score view:last-child {
+  border-bottom: none;
+}
+
+/* 弹窗按钮 */
+.game-over-button {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  margin: 20px 0;
+  animation: fadeIn 0.8s ease-out 0.6s both;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.game-over-button:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+/* 动画效果 */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 初始化计数器 */
+.history-list {
+  counter-reset: item;
+}

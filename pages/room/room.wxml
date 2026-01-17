@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="title">房间 {{roomId}}</view>
+  
+  <view class="subtitle">房间号：{{roomId}}</view>
+  <view class="subtitle">人数：{{users.length}}/10</view>
+  
+  <view class="user-list">
+    <view class="user-item" wx:for="{{users}}" wx:key="index">
+      <view>{{item.nickName || '玩家' + (index + 1)}}</view>
+      <view class="status" wx:if="{{item.ready}}">已准备</view>
+      <view class="status not-ready" wx:else>未准备</view>
+    </view>
+  </view>
+  
+  <view class="action-buttons">
+    <button class="button" bindtap="toggleReady">
+      {{isReady ? '取消准备' : '准备'}}
+    </button>
+    
+    <!-- 始终显示开始游戏按钮，但只有房主可以点击 -->
+    <button class="button" bindtap="startGame" disabled="{{!canStartGame}}">
+      开始游戏
+    </button>
+  </view>
+  
+  <view class="tips" wx:if="{{isHost}}">
+    提示：所有玩家准备后才能开始游戏
+  </view>
+  
+  <view class="tips" wx:else>
+    提示：请点击准备按钮准备游戏
+  </view>
+</view>
